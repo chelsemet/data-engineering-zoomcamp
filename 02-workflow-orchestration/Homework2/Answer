@@ -1,0 +1,15 @@
+#1 A 
+wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2020-12.csv.gz
+gunzip yellow_tripdata_2020-12.csv.gz
+du -sh yellow_tripdata_2020-12.csv
+129M    yellow_tripdata_2020-12.csv
+
+#2 B
+
+#3 D 29,430,127
+
+#3 C 1734051
+
+#5 C 1925152
+
+#6 B
