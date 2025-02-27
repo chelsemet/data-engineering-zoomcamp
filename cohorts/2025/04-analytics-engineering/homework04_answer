@@ -1,0 +1,30 @@
+#1
+A select * from dtc_zoomcamp_2025.raw_nyc_tripdata.ext_green_taxi
+
+#2
+D Update the WHERE clause to pickup_datetime >= CURRENT_DATE - INTERVAL '{{ var("days_back", env_var("DAYS_BACK", "30")) }}' DAY
+
+#3
+E dbt run --select models/staging/+
+only run files in staging folder
+
+#4
+ - Setting a value for DBT_BIGQUERY_TARGET_DATASET env var is mandatory, or it'll fail to compile
+    no default value in macro
+ - When using core, it materializes in the dataset defined in DBT_BIGQUERY_TARGET_DATASET
+    logic defines this way
+ - When using stg, it materializes in the dataset defined in DBT_BIGQUERY_STAGING_DATASET, or defaults to DBT_BIGQUERY_TARGET_DATASET
+    any model type that's not 'core' will use the staging dataset if defined, or fall back to the target dataset
+ - When using staging, it materializes in the dataset defined in DBT_BIGQUERY_STAGING_DATASET, or defaults to DBT_BIGQUERY_TARGET_DATASET
+    similar to last one
+
+#5
+D green: {best: 2020/Q1, worst: 2020/Q2}, yellow: {best: 2020/Q1, worst: 2020/Q2}
+
+#6
+
+
+#7
+Newark Airport: LaGuardia Airport 6357.7
+SoHo: Chinatown 19496.0
+Yorkville East: Garment District 13846.0
